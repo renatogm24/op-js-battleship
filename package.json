@@ -1,0 +1,30 @@
+{
+  "name": "op-js-battleship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "lint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatogm24/op-js-battleship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renatogm24/op-js-battleship/issues"
+  },
+  "homepage": "https://github.com/renatogm24/op-js-battleship#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
