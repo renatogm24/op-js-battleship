@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "watch": "webpack --watch",
     "lint": "eslint ./"
@@ -20,11 +20,18 @@
   },
   "homepage": "https://github.com/renatogm24/op-js-battleship#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "@types/node": "^16.10.1",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
+    "jest": "^27.2.1",
     "stylelint-config-prettier": "^8.0.2",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.4"
   }
 }
