@@ -14,7 +14,7 @@ const GameboardFactory = (dimension) => {
       shipDetail.position,
       long,
       shipDetail.orientation,
-      dimension
+      parseInt(dimension,10)
     );
     if (positionsArray !== null) {
       let addBool = true;
@@ -43,15 +43,19 @@ const GameboardFactory = (dimension) => {
     }
   }
 
+  function getBoardArray() {
+    return boardArray;
+  }
+
   const gameOver = () => ships.every((ship) => ship.isSunk());
 
-  return { placeShip, ships, receiveAttack, gameOver };
+  return { placeShip, ships, receiveAttack, gameOver, getBoardArray };
 };
 
 function getShipPositions(start, long, orientation, dimension) {
   const positionsArray = [];
   let cont = 0;
-  let current = start;
+  let current = parseInt(start, 10);
   let increment = orientation === "horizontal" ? 1 : dimension;
   let lineStart =
     orientation === "horizontal" ? Math.floor(start / dimension) : start;
