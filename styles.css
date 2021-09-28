@@ -1,0 +1,169 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Urbanist", sans-serif;
+  background-color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  height: 100vh;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  justify-content: center;
+  background-color: white;
+  border: 1px solid black;
+  width: 80vw;
+  height: 80vw;
+}
+
+#title {
+  color: black;
+  font-size: 8vw;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#player {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 30px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.playerChose {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 4vw;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 30vw;
+  height: 12vw;
+  margin: 0px 0px 0px 0px;
+}
+
+.playerChose:hover {
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.playerChose p {
+  margin: 0px;
+}
+
+.sq {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 40px;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.ship {
+  background-color: blue;
+}
+
+.sq p {
+  margin: 0px;
+}
+
+.sq:hover {
+  cursor: pointer;
+}
+
+.start {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 4vw;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 30vw;
+  height: 12vw;
+  margin: 0px 0px 0px 0px;
+}
+
+.start:hover {
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.level {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.levelBtn {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  border-radius: 40px;
+  width: 100px;
+}
+
+.levelBtn:hover {
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 650px) {
+  .board {
+    width: 30vw;
+    height: 30vw;
+  }
+  #title {
+    font-size: 4vw;
+  }
+  #player {
+    width: 50%;
+    justify-content: space-evenly;
+  }
+  .result {
+    width: 40%;
+    justify-content: space-evenly;
+  }
+  .level {
+    width: 50%;
+    justify-content: space-evenly;
+  }
+  .playerChose {
+    font-size: 2vw;
+    width: 15vw;
+    height: 4vw;
+  }
+}

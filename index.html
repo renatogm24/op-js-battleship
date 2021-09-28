@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="content">
+        <div id="title">Battleship</div>
+        <div id="player">
+          <button id="vsPlayer" class="playerChose">
+            <p>1 vs 1</p>
+          </button>
+          <button id="vsMachine" class="playerChose selected">
+            <p>1 vs Machine</p>
+          </button>
+        </div>
+        <div class="board0"></div>
+        <div class="level">
+          <button id="5" class="playerChose sizeSelector">
+            <p>5x5</p>
+          </button>
+          <button id="8" class="playerChose sizeSelector">
+            <p>8x8</p>
+          </button>
+          <button id="10" class="playerChose sizeSelector">
+            <p>10x10</p>
+          </button>
+        </div>
+        <div class="result">
+          <button class="playerChose">
+            <p>Random</p>
+          </button>
+          <button class="playerChose">
+            <p>Start</p>
+          </button>
+        </div>
+        <div class="result"></div>
+      </div>
+      <script src="main.js"></script>
+    </main>
+  </body>
+</html>
