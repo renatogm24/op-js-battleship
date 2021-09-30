@@ -10,6 +10,11 @@ subscribe("init", function () {
   document.querySelector("#player").style.display = "flex";
   document.querySelector(".level").style.display = "flex";
   document.querySelector(".result").style.display = "flex";
+  document.querySelector("#random").style.display = "block";
+  document.querySelector("#start").style.display = "block";
+  document.querySelector("#start").textContent = "Start";
+  document.querySelector("#vsPlayer").classList.remove("selected");
+  document.querySelector("#vsMachine").classList.add("selected");
   document.querySelector(".attackResult").style.display = "none";
   document.querySelectorAll(".sizeSelector")[0].classList.add("selected");
   document.querySelectorAll(".sizeSelector")[1].classList.remove("selected");

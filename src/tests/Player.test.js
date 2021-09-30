@@ -45,11 +45,11 @@ describe("Player functions", () => {
     testEnemy.setEnemy(testUser);
   });
 
-  it("Take turn", () => {
-    testUser.makeMove(4);
+  it("Take turn and fail", () => {
+    testUser.makeMove(1);
     expect(testUser.isTurn()).toBe(true);
     expect(testEnemy.isTurn()).toBe(false);
-    testUser.makeMove(5);
+    testUser.makeMove(8);
     expect(testUser.isTurn()).toBe(false);
     expect(testEnemy.isTurn()).toBe(true);
   });
