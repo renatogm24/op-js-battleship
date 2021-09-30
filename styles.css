@@ -31,12 +31,24 @@ body {
   margin-top: 20px;
 }
 
+#title2 {
+  color: black;
+  font-size: 6vw;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
 #player {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 30px 0px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+
+.attackResult{
+  display: none;
+  margin-top: 80px;
 }
 
 .playerChose {
@@ -75,6 +87,14 @@ body {
   background-color: white;
   color: black;
   border: 1px solid black;
+}
+
+.hit{
+  color: red;
+}
+
+.miss{
+  color: green;
 }
 
 .ship {
