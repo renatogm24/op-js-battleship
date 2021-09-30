@@ -3,23 +3,53 @@ const PlayerFactory = (board, currentTurn) => {
   let turn = currentTurn;
   let enemy;
   function makeMove(position) {
-    setTurn();
-    enemy.setTurn();
     if (position != null) {
-      enemy.getBoard().receiveAttack(position);
+      let hitShip = enemy.getBoard().receiveAttack(position);
+      if (!hitShip) {
+        setTurn();
+        enemy.setTurn();
+      }
+      return hitShip;
     }
   }
 
   function playMachine() {
     const enemyBoard = enemy.getBoard().getBoardArray();
     let positionsToMove = [];
-    enemyBoard.forEach((element) => {
-      if (element === " " || element === "O") {
+    for (let index = 0; index < enemyBoard.length; index++) {
+      const element = enemyBoard[index];
+      if (element !== "X" && element !== "N") {
+        positionsToMove.push(index);
+      }
+    }
+
+    /*enemyBoard.forEach((element) => {
+      if (element !== "X" && element !== "N") {
         positionsToMove.push(enemyBoard.indexOf(element));
       }
-    });
-    const random = Math.floor(Math.random() * positionsToMove.length);
-    makeMove(positionsToMove[random]);
+    });*/
+
+    if (
+      makeMove(
+        positionsToMove[Math.floor(Math.random() * positionsToMove.length)]
+      )
+    ) {
+      playMachine();
+    }
+
+    /*
+    let random;
+    let bool = true;
+    while (bool) {
+      random = Math.floor(Math.random() * positionsToMove.length);
+      console.log(random);
+      console.log(positionsToMove);
+      let move = positionsToMove[random];
+      console.log(move);
+      if (!makeMove(move)) {
+        bool = false;
+      }
+    }*/
   }
 
   function isTurn() {
@@ -34,6 +64,10 @@ const PlayerFactory = (board, currentTurn) => {
     enemy = newEnemy;
   }
 
+  function getEnemy() {
+    return enemy;
+  }
+
   function getBoard() {
     return boardFactory;
   }
@@ -46,6 +80,7 @@ const PlayerFactory = (board, currentTurn) => {
     makeMove,
     isTurn,
     setEnemy,
+    getEnemy,
     getBoard,
     setBoard,
     setTurn,

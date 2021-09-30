@@ -1,32 +1,62 @@
 import { ShipFactory } from "../factories/Ship";
 
 const GameboardFactory = (dimension) => {
-  const boardArray = [];
+  let boardArray = [];
   const ships = [];
+  let cont = 1;
 
   for (let index = 0; index < dimension ** 2; index++) {
     boardArray.push(" ");
   }
 
   function placeShip(shipDetail) {
-    const long = longByType(shipDetail.type);
+    //const long = longByType(shipDetail.type);
     const positionsArray = getShipPositions(
       shipDetail.position,
-      long,
+      shipDetail.type,
       shipDetail.orientation,
-      parseInt(dimension,10)
+      parseInt(dimension, 10)
     );
     if (positionsArray !== null) {
+      let arraytoAdd = [];
       let addBool = true;
-      positionsArray.forEach((element) => {
+      for (let index = 0; index < positionsArray.length; index++) {
+        const element = positionsArray[index];
         if (boardArray[element] === " ") {
-          boardArray[element] = "O";
+          arraytoAdd.push(element);
         } else {
           addBool = false;
-          return;
+          break;
         }
-      });
-      addBool ? ships.push(ShipFactory(positionsArray)) : null;
+      }
+
+      if (addBool) {
+        arraytoAdd.forEach((element) => (boardArray[element] = `${cont}`));
+        ships.push(ShipFactory(positionsArray));
+        cont += 1;
+      }
+    }
+  }
+
+  function placeShipWhithArray(positionsArray) {
+    if (positionsArray !== null) {
+      let arraytoAdd = [];
+      let addBool = true;
+      for (let index = 0; index < positionsArray.length; index++) {
+        const element = positionsArray[index];
+        if (boardArray[element] === " ") {
+          arraytoAdd.push(element);
+        } else {
+          addBool = false;
+          break;
+        }
+      }
+
+      if (addBool) {
+        arraytoAdd.forEach((element) => (boardArray[element] = `${cont}`));
+        ships.push(ShipFactory(positionsArray));
+        cont += 1;
+      }
     }
   }
 
@@ -38,8 +68,10 @@ const GameboardFactory = (dimension) => {
           element.hit(position);
         }
       });
+      return true;
     } else {
       boardArray[position] = "N";
+      return false;
     }
   }
 
@@ -47,12 +79,25 @@ const GameboardFactory = (dimension) => {
     return boardArray;
   }
 
+  function setBoardArray(val) {
+    boardArray = val;
+  }
+
   const gameOver = () => ships.every((ship) => ship.isSunk());
 
-  return { placeShip, ships, receiveAttack, gameOver, getBoardArray };
+  return {
+    placeShip,
+    placeShipWhithArray,
+    ships,
+    receiveAttack,
+    gameOver,
+    getBoardArray,
+    setBoardArray,
+  };
 };
 
-function getShipPositions(start, long, orientation, dimension) {
+function getShipPositions(start, type, orientation, dimension) {
+  let long = longByType(type);
   const positionsArray = [];
   let cont = 0;
   let current = parseInt(start, 10);
@@ -91,4 +136,4 @@ function longByType(type) {
   }
 }
 
-export { GameboardFactory };
+export { GameboardFactory, getShipPositions };

@@ -18,13 +18,14 @@
       <div class="content">
         <div id="title">Battleship</div>
         <div id="player">
-          <button id="vsPlayer" class="playerChose">
+          <button id="vsPlayer" class="playerChose typeGame">
             <p>1 vs 1</p>
           </button>
-          <button id="vsMachine" class="playerChose selected">
+          <button id="vsMachine" class="playerChose typeGame selected">
             <p>1 vs Machine</p>
           </button>
         </div>
+        <div id="title2">Player 1 board</div>
         <div class="board0"></div>
         <div class="level">
           <button id="5" class="playerChose sizeSelector">
@@ -38,14 +39,24 @@
           </button>
         </div>
         <div class="result">
-          <button class="playerChose">
+          <button id="random" class="playerChose">
             <p>Random</p>
           </button>
-          <button class="playerChose">
+          <button id="start" class="playerChose">
             <p>Start</p>
           </button>
         </div>
-        <div class="result"></div>
+        <div class="attackResult">
+          <button id="opponent" class="playerChose">
+            <p>Opponent</p>
+          </button>
+          <button id="attack" class="playerChose">
+            <p>Attack</p>
+          </button>
+          <button id="restart" class="playerChose">
+            <p>Restart</p>
+          </button>
+        </div>
       </div>
       <script src="main.js"></script>
     </main>
